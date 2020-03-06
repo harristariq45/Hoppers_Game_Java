@@ -10,7 +10,6 @@ public class Board {
     a.setSize(500,500);
     a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
     public static void main(String[] args) {
         Board s=new Board();    
     }
