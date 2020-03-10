@@ -19,7 +19,11 @@ public class Board {
     a.setSize(500,500);
     a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    a.square 
     
+
+
+
     }
 
     public static void main(String[] args) {
