@@ -7,22 +7,36 @@ public class Board {
 
     JFrame a;
     JPanel content;
-    
+    Square[] squares = new Square[25];
     
     public Board(){
-    a = new JFrame();   
-    content=new JPanel();
-    content.setLayout(new BorderLayout());
-    a.setContentPane(content);
-    a.setVisible(true);
-    a.setTitle("HopperGame");
-    a.setSize(500,500);
-    a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        a = new JFrame();   
+        content = new JPanel();
+        content.setLayout(new GridLayout(5,5));
+        a.setContentPane(content);
+        
+        a.setTitle("HopperGame");
+        a.setSize(500,500);
+        a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    a.square 
-    
+        for(int i = 0; i < 25; i++){
 
+        if(i%2=0)
+            {
+            squares[i] = new Square ();
+            content.add(squares[i].getbutton());
+            }
 
+        if(i%2=1)
+            {
+                setIcon
+            squares[i] = new Square ();
+            content.add(squares[i].getbutton());
+            }
+
+        }
+
+        a.setVisible(true);
 
     }
 

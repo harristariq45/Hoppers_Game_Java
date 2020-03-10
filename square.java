@@ -1,14 +1,39 @@
-import javax.swing.*;
-import java.awt.event; // action listener
+import javax.swing.*; 
 import java.awt.* ;
 
-public class Sqaure {
+public class Square{
+
+    JButton w;
+    JButton l;
+
+    public Square(){   
+        w = new JButton(); 
+        ImageIcon water = new ImageIcon("water.png");
+        w.setIcon(water);
+
+    }
+
+    public LilyPad(){   
+        l = new JButton(); 
+        ImageIcon LilyPad = new ImageIcon("Lilypad.png");
+        l.setIcon(LilyPad);
+
+    }
     
-    JLabel water1 = new JLabel(new ImageIcon("/home/lancs/tariqhb1/hdrive/Java/week8cw/JavaCourseWork/water.png"));
 
 
 
 
+    public void seticonL (){ 
+        ImageIcon lilypad = new ImageIcon("LilyPad.png");  
+        b.setIcon(lilypad);
+    }
+
+
+
+    public JButton getbutton(){
+        return b;
+    }
 
 
 }
