@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.util.Random;
 
 
-public class Board {
+public class Board implements ActionListener {
 
     JFrame a;
     JPanel content;
@@ -24,12 +25,18 @@ public class Board {
             squares[i] = new Square ();
             content.add(squares[i].getbutton());
 
-        if(i%2==0)
-            {
-            squares[i].setIcon(1);
-            // squares[i] = new SquareL ();
-            // content.add(squares[i].getbutton());
+        if(i%2==0){
+                squares[i].setIcon(1);
             }
+
+        if( i== 6 || i== 8 || i== 12 || i== 20 || i== 24){
+            squares[i].setIcon(2);
+        }
+
+        if( i== 22 ){
+            squares[i].setIcon(3);
+        }
+
 
         }
 
@@ -44,3 +51,6 @@ public class Board {
 }
 
 // content.add(squares[i].getbutton());
+// squares[i] = new SquareL ();
+// content.add(squares[i].getbutton());
+    

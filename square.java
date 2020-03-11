@@ -15,10 +15,8 @@ public class Square{
     
     public void setIcon (int i) {
         if (i==0) {
-            w = new JButton(); 
             ImageIcon water = new ImageIcon("water.png");
             w.setIcon(water);
-
         }
 
         else if (i==1) { 
@@ -36,6 +34,9 @@ public class Square{
             w.setIcon(RedFrog);
         }
     }
+
+
+    
 
     public JButton getbutton(){
         return w;
