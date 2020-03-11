@@ -16,22 +16,19 @@ public class Board {
         a.setContentPane(content);
 
         a.setTitle("HopperGame");
-        a.setSize(500,500);
+        a.setSize(750,750);
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         for(int i = 0; i < 25; i++){
 
+            squares[i] = new Square ();
+            content.add(squares[i].getbutton());
+
         if(i%2==0)
             {
-            squares[i] = new SquareW ();
-            content.add(squares[i].getbutton());
-            }
-
-        if(i%2==1)
-            {
-            setIcon
-            squares[i] = new SquareL ();
-            content.add(squares[i].getbutton());
+            squares[i].setIcon(1);
+            // squares[i] = new SquareL ();
+            // content.add(squares[i].getbutton());
             }
 
         }
@@ -40,8 +37,10 @@ public class Board {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Board b=new Board();    
     }
 
 }
+
+// content.add(squares[i].getbutton());

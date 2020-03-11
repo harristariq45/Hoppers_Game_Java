@@ -5,11 +5,13 @@ public class Square{
 
     JButton a; 
     JButton w;
-    JButton l;
-    JButton GF;
-    JButton RF;
 
-    
+    public Square(){   
+        w = new JButton(); 
+        ImageIcon water = new ImageIcon("water.png");
+        w.setIcon(water);
+
+    }
     
     public void setIcon (int i) {
         if (i==0) {
@@ -20,26 +22,23 @@ public class Square{
         }
 
         else if (i==1) { 
-            l = new JButton(); 
             ImageIcon LilyPad = new ImageIcon("LilyPad.png");
-            l.setIcon(LilyPad);
+            w.setIcon(LilyPad);
         }
 
         else if (i==2) {
-            GF = new JButton(); 
             ImageIcon GreenFrog = new ImageIcon("GreenFrog.png");
-            GF.setIcon(GreenFrog);
+            w.setIcon(GreenFrog);
         }
 
         else if (i==3) {
-            RF = new JButton(); 
             ImageIcon RedFrog = new ImageIcon("RedFrog.png");
-            RF.setIcon(RedFrog);
+            w.setIcon(RedFrog);
         }
     }
 
     public JButton getbutton(){
-        return a;
+        return w;
     }
 
 
