@@ -14,23 +14,23 @@ public class Board {
         content = new JPanel();
         content.setLayout(new GridLayout(5,5));
         a.setContentPane(content);
-        
+
         a.setTitle("HopperGame");
         a.setSize(500,500);
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         for(int i = 0; i < 25; i++){
 
-        if(i%2=0)
+        if(i%2==0)
             {
-            squares[i] = new Square ();
+            squares[i] = new SquareW ();
             content.add(squares[i].getbutton());
             }
 
-        if(i%2=1)
+        if(i%2==1)
             {
-                setIcon
-            squares[i] = new Square ();
+            setIcon
+            squares[i] = new SquareL ();
             content.add(squares[i].getbutton());
             }
 
