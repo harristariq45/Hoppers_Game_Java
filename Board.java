@@ -8,7 +8,8 @@ public class Board implements ActionListener {
 
     JFrame a;
     JPanel content;
-    Square[] squares = new Square[25];
+    Square[][] squares = new Square[5][5];
+    int[][] level1 = {{1,0,1,0,1},{0,2,0,2,0},{1,0,2,0,1},{0,1,0,1,0},{2,0,3,0,2}};
     
     public Board(){
         a = new JFrame();   
@@ -20,54 +21,69 @@ public class Board implements ActionListener {
         a.setSize(750,750);
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        for(int i = 0; i < 25; i++){
+        for(int i = 0; i < 5; i++)
+        {
 
-            squares[i] = new Square (0);
-            content.add(squares[i].getbutton());
 
-        if(i%2==0){squares[i].setIcon(1);}
+            for (int j = 0 ; j<5 ; j++)
+            {
+            squares[i][j] = new Square (i, j, level1[i][j]);
+            content.add(squares[i][j].getbutton());
+            }
 
-        if( i== 6 || i== 8 || i== 12 || i== 20 || i== 24){ squares[i].setIcon(2); }
+           //if(i < 5 || j < 5){squares[i][j].setIcon(1);}
 
-        if( i== 22 ){ squares[i].setIcon(3); }
+            // if( i== 6 || i== 8 || i== 12 || i== 20 || i== 24){squares[i].setIcon(2);}
 
-            squares[i].getbutton().addActionListener(this);
+            // if( i== 22 ){ squares[i].setIcon(3); }
+
+           // squares[i][j].getbutton().addActionListener(this);
 
         }
+
+
+
+
 
         a.setVisible(true);
 
     }
 
-    public void actionPerformed (ActionEvent e/*, JButton w*/){
+    public void actionPerformed (ActionEvent e/*, JButton w*/)
+    {
         
-        for ( int i=0 ; i< 25 ; i++)
+        for ( int i=0 ; i< 5 ; i++)
         {
-            if( squares[i].getbutton() == (JButton)e.getSource() )
+            for (int j= 0 ; j<5 ; j++)
             {
-                System.out.println("sqaure found");
+                if(squares[i][j].getbutton() == (JButton)e.getSource())
+                {
+                    System.out.println("sqaure found");
 
-                if (squares[i].getState() == 2){
-                    squares[i].setIcon(4);
-                    System.out.println("green frog clicked");
+                    if (squares[i][j].getState() == 2){
+                        squares[i][j].setIcon(4);
+                        System.out.println("green frog clicked");
+                    }
+
+                    if (squares[i][j].getState() == 3){
+                        squares[i][j].setIcon(5);
+                        System.out.println("red frog clicked");
+                    }
+
+
                 }
-                if (squares[i].getState() == 3){
-                    squares[i].setIcon(5);
-                    System.out.println("red frog clicked");
-                }
-            }
             
+            }
         }
-
-
+    }
 
         // if (((JButton)e.getSource()). ){
-        //     squares[i].setIcon(5);
+        //     squares[i][j].setIcon(5);
         // }
         // if (e.getSource() == w){
         //     e.setIcon(4);
         // }
-    }
+    
 
 
     public static void main(String[] args){

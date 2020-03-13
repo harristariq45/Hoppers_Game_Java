@@ -6,10 +6,8 @@ public class Square{
     //private JButton a; 
     private JButton w;
     private int state;
-    private int x;
-    private int y;
 
-    public Square( int state){   
+    public Square( int x, int y, int state){   
         w = new JButton(); 
         setIcon(state);
 
@@ -67,7 +65,8 @@ public class Square{
     }
 
 
-    public void moveTo( int state){
+    public void moveTo( Square moveSquare){
+
 
     }
 
