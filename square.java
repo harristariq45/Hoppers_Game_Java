@@ -1,46 +1,78 @@
-import javax.swing.*; 
+import javax.swing.*;
 import java.awt.* ;
 
 public class Square{
 
-    JButton a; 
-    JButton w;
+    //private JButton a; 
+    private JButton w;
+    private int state;
+    private int x;
+    private int y;
 
-    public Square(){   
+    public Square( int state){   
         w = new JButton(); 
-        ImageIcon water = new ImageIcon("water.png");
-        w.setIcon(water);
+        setIcon(state);
 
     }
     
-    public void setIcon (int i) {
-        if (i==0) {
+    public void setIcon (int p) {
+
+        if (p==0) {
             ImageIcon water = new ImageIcon("water.png");
             w.setIcon(water);
+            state = p;
         }
 
-        else if (i==1) { 
+        else if (p==1) { 
             ImageIcon LilyPad = new ImageIcon("LilyPad.png");
             w.setIcon(LilyPad);
+            state = p;
         }
 
-        else if (i==2) {
+        else if (p==2) {
             ImageIcon GreenFrog = new ImageIcon("GreenFrog.png");
             w.setIcon(GreenFrog);
+            state = p;
         }
 
-        else if (i==3) {
+        else if (p==3) {
             ImageIcon RedFrog = new ImageIcon("RedFrog.png");
             w.setIcon(RedFrog);
+            state = p;
         }
+
+        else if (p==4) {
+            ImageIcon GreenFrog2 = new ImageIcon("GreenFrog2.png");
+            w.setIcon(GreenFrog2);
+            state = p;
+        }
+
+        else if (p==5) {
+            ImageIcon RedFrog2 = new ImageIcon("RedFrog2.png");
+            w.setIcon(RedFrog2);
+            state = p;
+        }
+        
+
+
     }
 
+    public int getState() {
+        return state;
+    }
 
-    
 
     public JButton getbutton(){
         return w;
     }
+
+
+    public void moveTo( int state){
+
+    }
+
+
+
 
 
 }
