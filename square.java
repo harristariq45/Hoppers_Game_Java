@@ -65,9 +65,9 @@ public class Square{
     }
 
 
-    public void moveTo( Square moveSquare){
-
-
+    public void moveTo (Square moveSquare){
+        moveSquare.setIcon(this.state);
+        this.setIcon(1);
     }
 
 
