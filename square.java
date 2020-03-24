@@ -6,12 +6,18 @@ public class Square{
     //private JButton a; 
     private JButton w;
     private int state;
+   // private JButton l;
 
     public Square( int x, int y, int state){   
         w = new JButton(); 
         setIcon(state);
 
     }
+
+    // public LvlButtons( int i, int j){   
+    //     l = new JButton(); 
+
+    // }
     
     public void setIcon (int p) {
 
@@ -57,6 +63,14 @@ public class Square{
 
     public int getState() {
         return state;
+    } 
+
+    // public int getLevel () {
+    //     return levelByUser; 
+    // }
+
+    public void setLevel (int Level) {
+    
     }
 
 

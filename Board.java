@@ -4,12 +4,38 @@ import java.awt.event.*;
 import java.util.Random;
 import java.util.Scanner;
 
+// public class levelScreen (){  
+
+
+//     public choselevel(){
+//     JFrame b;
+//     JPanel levelButtons;
+
+//     b = new JFrame();   
+//     levelButtons = new JPanel();
+//     levelButtons.setLayout(new GridLayout(4,10));
+//     b.setContentPane(levelButtons);
+
+//     b.setTitle("Please pick level");
+//     b.setSize(750,750);
+//     b.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+
+
+//     b.setVisible(true);
+//     }
+// }
+
+d.levelScreen();
+
 
 public class Board implements ActionListener {
 
     JFrame a;
     JPanel content;
     Square[][] squares = new Square[5][5];
+    //LevelSquare [][] levelSquares = new LevelSquares[4][10];
 
     
     int[][] L1 = {{3,0,1,0,1},{0,2,0,1,0},{1,0,1,0,1},{0,1,0,1,0},{1,0,1,0,1}};
@@ -29,19 +55,13 @@ public class Board implements ActionListener {
     int currentY2;
 
 
-    // public void level (int[][] level){
-        
-    //     int[][] l1 = {{3,0,1,0,1},{0,2,0,1,0},{1,0,1,0,1},{0,1,0,1,0},{1,0,1,0,1}};
-    //     int[][] l2 = {{1,0,1,0,3},{0,1,0,1,0},{1,0,1,0,2},{0,1,0,1,0},{1,0,1,0,1}};
-    //     int[][] l3 = {{1,0,1,0,1},{0,1,0,2,0},{1,0,3,0,1},{0,1,0,1,0},{1,0,1,0,1}};
-    //     int[][] l4 = {{3,0,1,0,1},{0,2,0,1,0},{1,0,1,0,1},{0,1,0,2,0},{1,0,1,0,1}};
-    // }
 //     0 = Water, 1= LillyPad, 2 = Green frog, 3 = Red frog
-
 //     4 = Green frog2, 5 = Red frog2
 
 
+
     public Board(){
+
         a = new JFrame();   
         content = new JPanel();
         content.setLayout(new GridLayout(5,5));
@@ -58,14 +78,12 @@ public class Board implements ActionListener {
         for(int i = 0; i < 5; i++)
         {
 
-
             for (int j = 0 ; j<5 ; j++)
             {
                 squares[i][j] = new Square (i, j, L10 [i][j]);
                 content.add(squares[i][j].getbutton());
                 squares[i][j].getbutton().addActionListener(this);
             }
-  
 
         }
 
@@ -91,12 +109,12 @@ public class Board implements ActionListener {
         {
             for (int j= 0 ; j<5 ; j++)
             {
-                if (squares[i][j].getState() == 2 && squares[i][j].getState() == 0){
+                // if (squares[i][j].getState() == 2 && squares[i][j].getState() == 0){
 
-                    System.out.println("You Won");
-                    break;
+                //     System.out.println("You Won");
+                //     break;
 
-                }
+                // }
                     if(squares[i][j].getbutton() == (JButton)e.getSource())
                     {
 
@@ -142,13 +160,9 @@ public class Board implements ActionListener {
                                 
                             }
 
-                            // if (squares[i][j].getState() == 2 && squares[i][j].getState() == 0){
-
-                            //     System.out.println("You Won");
-                            //     break;
-
-                            // }
-
+                            
+                            
+ 
 
                         }else if(squares[i][j].getState() == 2 || squares[i][j].getState() == 3){
                             break;
@@ -189,7 +203,7 @@ public class Board implements ActionListener {
                         first = null;
                     }
 
-    
+                    System.out.println("                                     ");
 
                     //currentX = i;
 
@@ -198,7 +212,12 @@ public class Board implements ActionListener {
                     //sideways
 
                     //vertical
+                                if (squares[i][j].getState() == 2  && squares[i][j].getState() == 0){
 
+                                System.out.println("You Won");
+                                break;
+
+                                }
 
                 }
             
