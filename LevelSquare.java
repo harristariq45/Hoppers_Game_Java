@@ -5,7 +5,7 @@ public class LevelSquare{
 
     private JButton l;
 
-    public LevelSquare( int i, int j){   
+    public LevelSquare(){   
         l = new JButton(); 
 
     }
