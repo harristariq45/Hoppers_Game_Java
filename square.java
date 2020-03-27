@@ -1,24 +1,40 @@
 import javax.swing.*;
 import java.awt.* ;
 
-public class Square{
+/**
+ * class for buttons on the Board class 
+ * 
+ * this class will have the code to set the repective
+ * icons on the buttons 
+ * 
+ * 
+ * @author Harris Bin Tariq
+ * @version 1.0 
+ */
 
-    //private JButton a; 
+public class Square{
+ 
     private JButton w;
     private int state;
-   // private JButton l;
-
+/**
+ * 
+ * @param x the xcoordinate
+ * @param y the ycoordinate
+ * @param state  state is the icon which is displayed on the button
+ *               0 = Water, 1= LillyPad, 2 = Green frog, 3 = Red frog
+ *               4 = Green frog2, 5 = Red frog2
+ */
     public Square( int x, int y, int state){   
         w = new JButton(); 
         setIcon(state);
-
     }
 
-    // public LvlButtons( int i, int j){   
-    //     l = new JButton(); 
-
-    // }
-    
+    /**
+     * this method is to set icon
+     * @param p is ued to set the state of the button 
+     *          setting the state will help the button
+     *          to be recognised later on
+     */
     public void setIcon (int p) {
 
         if (p==0) {
@@ -56,49 +72,32 @@ public class Square{
             w.setIcon(RedFrog2);
             state = p;
         }
-        
-
-
     }
-
+    /**
+    * method to return the state so that the icon can be recognised 
+    * and the information used accordingly 
+    * @return 0 = Water, 1= LillyPad, 2 = Green frog, 3 = Red frog,
+    *         4 = Green frog2, 5 = Red frog2       
+    */
     public int getState() {
         return state;
     } 
-
-    // public int getLevel () {
-    //     return levelByUser; 
-    // }
-
-    public void setLevel (int Level) {
-    
-    }
-
 
     public JButton getbutton(){
         return w;
     }
 
+    /**
+     * this method is so that the information of the square
+     * selected can be used to change icons as need 
+     * @param moveSquare this method takes the square selected 
+     *                   as a parameter and when moved sets the 
+     *                   icon as an empty lilypad. 
+     */
 
     public void moveTo (Square moveSquare){
         moveSquare.setIcon(this.state);
         this.setIcon(1);
     }
 
-
-
-
-
 }
-// public SquareW(){   
-//         w = new JButton(); 
-//         ImageIcon water = new ImageIcon("water.png");
-//         w.setIcon(water);
-
-//     }
-
-//     public SquareL(){   
-//         l = new JButton(); 
-//         ImageIcon LilyPad = new ImageIcon("Lilypad.png");
-//         l.setIcon(LilyPad);
-//     }
-
