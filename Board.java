@@ -186,9 +186,9 @@ public class Board implements ActionListener {
             for(int j= 0 ; j<5 ; j++)
             { 
                 if(squares[i][j].getState() == 2 || squares[i][j].getState() == 3)
-                    { 
-                        greenFrogs++;
-                    }
+                { 
+                    greenFrogs++;
+                }
             }
         }
         if (greenFrogs == 0)
@@ -199,18 +199,18 @@ public class Board implements ActionListener {
             JOptionPane.PLAIN_MESSAGE);
             a.dispose();
             Level++;
+            if (Level < 40)
+            {
+                new Board(Level);
+            }
 
-            // if (Level < 40)
-            // {
-            //     new Board(Level);
-            // }
-
-            // if (Level > 40)
-            // {
-            //     new LevelScreen();
-            // }
-            greenFrogs = 0;
+            if (Level >= 40)
+            {
+                new LevelScreen();
+            }
+            
         }
+        greenFrogs = 0;
     }
 
     /**
